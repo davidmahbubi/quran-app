@@ -1,32 +1,51 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="custom-hero">
+      <i class="fas fa-quran main-logo"></i>
+      <h1>The Holly Qur'an</h1>
     </div>
-    <router-view />
+    <b-container>
+      <router-view />
+    </b-container>
   </div>
 </template>
 
+<script>
+export default {
+  data: () => ({
+    menuVisible: false,
+  }),
+};
+</script>
+
 <style>
+@import url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.custom-hero {
+  padding: 60px 0;
   text-align: center;
-  color: #2c3e50;
+  color: white;
+  background-color: rebeccapurple;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
+.custom-hero h1 {
   font-weight: bold;
-  color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.main-logo {
+  font-size: 80px !important;
+  margin-bottom: 25px;
+}
+
+.form-control:focus {
+  border-color: rebeccapurple;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 </style>
