@@ -42,8 +42,13 @@ export default {
   methods: {
     async fetchSurahList() {
       try {
-        const surahList = await this.$store.dispatch(`surah/${GET_SURAH_LIST}`);
-        this.surahList = surahList;
+        if (this.$store.getters[`surah/getSurahList`].length > 0) {
+          this.surahList = this.$store.getters[`surah/getSurahList`];
+        } else {
+          this.surahList = await this.$store.dispatch(
+            `surah/${GET_SURAH_LIST}`
+          );
+        }
       } catch (err) {
         console.error(err);
       }
@@ -58,10 +63,6 @@ export default {
 <style scoped>
 .surah-list-container {
   margin: 60px 0;
-}
-
-.custom-card-shadow {
-  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
 }
 
 .surah-link .card {

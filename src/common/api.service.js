@@ -14,4 +14,7 @@ export const surah = {
   fetchAll() {
     return apiService.get(BASE_URL, 'surah');
   },
+  fetchSingle(surahNumber) {
+    return apiService.get(BASE_URL, `surah/${surahNumber}`);
+  },
 };
