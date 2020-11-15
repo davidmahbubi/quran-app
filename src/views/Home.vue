@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <SearchBar class="mt-5" placeholder="Cari Surah" />
     <b-row class="surah-list-container">
       <b-col
         :md="6"
@@ -29,7 +28,6 @@
 
 <script>
 import { GET_SURAH_LIST } from './../store/actions.type';
-import SearchBar from '@/components/SearchBar.vue';
 
 export default {
   name: 'Home',
@@ -53,9 +51,6 @@ export default {
         console.error(err);
       }
     },
-  },
-  components: {
-    SearchBar,
   },
 };
 </script>
